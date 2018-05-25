@@ -133,4 +133,8 @@ public class HMSubMenu extends VerticalLayout implements MenuComponent<HMSubMenu
 		}
 		return menuComponentList;
 	}
+	
+	public HMButton getButton() {
+		return button;
+	}
 }
