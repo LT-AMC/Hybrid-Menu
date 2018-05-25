@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcons;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -128,5 +129,9 @@ public class HMSubMenu extends VerticalLayout implements MenuComponent<HMSubMenu
 			}
 		}
 		return menuComponentList;
+	}
+
+	public Button getButton() {
+		return button;
 	}
 }
