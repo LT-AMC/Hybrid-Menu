@@ -1,7 +1,5 @@
 package de.kaesdingeling.hybridmenu.design;
 
-import de.kaesdingeling.hybridmenu.utils.Styles;
-
 public class DesignItem {
 	/* Colors */
     public DesignColor darkColor; // rgb(66, 66, 66)
@@ -44,7 +42,7 @@ public class DesignItem {
     		.with(".rootContent")
     			.add(DesignUtils.hmBackgroundWithColor(contentBackground))
     			.and()
-    		.with("." + Styles.topMenu)
+    		.with(".topMenu")
     			.with("vaadin-button")
     				.add(DesignUtils.color(DesignUtils.hmColorDedect(menuTopItemBackground)))
     				.add(DesignUtils.boxShadow(0, 0, 2, 0, menuTopItemBackground.copy().setAlpha(0.75)))
@@ -88,13 +86,32 @@ public class DesignItem {
     					.and()
     				.and()
     			.and()
-    		.with("." + Styles.leftMenu)
+    		.with(".leftMenu")
 				.add(DesignUtils.hmBackgroundWithColor(menuLeftBackground))
 				.add(DesignUtils.boxShadow(0, 0, 2, 0, DesignUtils.hmColorDedect(menuLeftBackground).copy().setAlpha(0.25)))
 				.add(DesignUtils.border(DesignUtils.hmColorDedect(menuLeftBackground).copy().setAlpha(0.25), "right"))
 				.with("> label")
 					.add(DesignUtils.border(DesignUtils.hmColorDedect(menuLeftBackground).copy().setAlpha(0.25), "bottom"))
 					.and()
+				.with("vaadin-text-field")
+    				.add(DesignUtils.color(DesignUtils.hmColorDedect(menuTopItemBackground)))
+    				.add(DesignUtils.boxShadow(0, 0, 2, 0, menuTopItemBackground.copy().setAlpha(0.75)))
+        			.with(".vaadin-text-field")
+        				.add(DesignUtils.background(menuTopItemBackground))
+        				.and()
+        			.with("&:hover")
+        				.add(DesignUtils.border(menuItemBorder, "top"))
+        				.with(".vaadin-text-field")
+	        				.add(DesignUtils.background(menuTopItemHoverBackground))
+	        				.and()
+        				.and()
+        			.with("&.active")
+	    				.add(DesignUtils.border(menuItemActiveBorder, "top"))
+	    				.and()
+    				.with("iron-icon")
+    					.add(DesignUtils.color(DesignUtils.hmColorDedect(menuTopItemBackground)))
+    					.and()
+    				.and()
     			.with("vaadin-button")
     				.add(DesignUtils.hmBackgroundWithColor(menuLeftItemBackground))
     				.add(DesignUtils.border(menuItemBorder, "left"))
@@ -109,12 +126,15 @@ public class DesignItem {
 	    				.add(DesignUtils.hmBackgroundWithColor(tooltipBackground))
 	    				.add(DesignUtils.boxShadow(0, 0, 2, 0, tooltipBackground.copy().setAlpha(0.75)))
 	    				.and()
+	    			.with("&.search")
+	    				.add(DesignUtils.background(new DesignColor(119, 221, 46)))
+	    				.and()
 	    			.and()
 	    		.with("vaadin-vertical-layout.subMenu > vaadin-vertical-layout")
 					.add(DesignUtils.border(DesignUtils.hmColorDedect(menuLeftBackground).copy().setAlpha(0.25), "left"))
 					.and()
 				.and()
-			.with("." + Styles.notificationCenter)
+			.with(".notificationCenter")
 				.add(DesignUtils.hmBackgroundWithColor(notificationCenterBackground))
 				.with(".notification")
 					.add(DesignUtils.hmBackgroundWithColor(notificationBackground))
@@ -136,12 +156,7 @@ public class DesignItem {
 				.with(".footer vaadin-button")
 					.add(DesignUtils.hmBackgroundWithColor(notificationCenterFooterButtonBackground))
 					.with("&:hover")
-						.add(DesignUtils.hmBackgroundWithColor(notificationCenterFooterHoverButtonBackground))
-    					.and()
-    				.and()
-    			.and()
-    		.with("." + Styles.breadCrumbs + " vaadin-button")
-    			.add(DesignUtils.color(DesignUtils.hmColorDedect(contentBackground)));
+						.add(DesignUtils.hmBackgroundWithColor(notificationCenterFooterHoverButtonBackground));
     	
     	return designBuilder.build();
     }
